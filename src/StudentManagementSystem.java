@@ -107,7 +107,7 @@ public class StudentManagementSystem {
     public void searchStudent(Student student, String filename){
         //Read students from the file
         List<Student> studentsFromFile = readStudentsFromFile(filename);
-
+        admin.studentList.clear();  // Clear the existing list
         //Update admins student list with the students from the file
         admin.studentList.addAll(studentsFromFile);  // Add the students from the file
 
@@ -118,7 +118,7 @@ public class StudentManagementSystem {
     public void displayAllStudents(String filename){
         //Read students from the file
         List<Student> studentsFromFile = readStudentsFromFile(filename);
-
+        admin.studentList.clear();  // Clear the existing list
         //Update admins student list with the students from the file
         admin.studentList.addAll(studentsFromFile);  // Add the students from the file
 
