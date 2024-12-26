@@ -44,7 +44,7 @@ public class Admin {
                 studentList.remove(student);
                 studentIds.remove(student.getStudentId());
                 students.remove(student.getStudentId(), student);
-                System.out.println("Student removed: " + student.getStudentId());
+                System.out.println("Successfully removed student" + student.getStudentId());
             }
             catch (StudentNotFoundException e) {
                 System.out.println(e.getMessage());

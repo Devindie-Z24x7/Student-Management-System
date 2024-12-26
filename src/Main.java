@@ -10,14 +10,31 @@ public class Main {
         String filename = "students.txt";
 
         // Create a few sample students
-        Student student1 = new Student(1, "Devindie", LocalDate.of(2000, 5, 15), "0714568851");
-        Student student2 = new Student(2, "Sandali", LocalDate.of(1999, 12, 22), "0725645588");
-        Student student3 = new Student(3, "Disini", LocalDate.of(2001, 7, 10), "0745551232");
+        Student student1 = new Student( 1,"Devindie", LocalDate.of(2000, 5, 15), "0714568851");
+        Student student2 = new Student( 2, "Sandali", LocalDate.of(1999, 12, 22), "0725645588");
+        Student student3 = new Student( 3, "Disini", LocalDate.of(2001, 7, 10), "0745551232");
+        Student student4 = new Student( 4,"Hansi", LocalDate.of(2001, 7, 10), "0745551232");
+        Student student5 = new Student( 5, "Dulmi", LocalDate.of(2001, 7, 10), "0745551232");
 
         // Add students to the system and the file
         studentManagementSystem.addStudent(student1, filename);
         studentManagementSystem.addStudent(student2, filename);
         studentManagementSystem.addStudent(student3, filename);
+        studentManagementSystem.addStudent(student4, filename);
+        studentManagementSystem.addStudent(student5, filename);
+
+        // Display all students (this will read from the file and update the list in memory)
+        System.out.println("Displaying all students:");
+        studentManagementSystem.displayAllStudents(filename);
+
+        //update the phone number of student 4
+        System.out.println("Update the student 4");
+        student4.setPhoneNumber("0771234567");
+        studentManagementSystem.updateStudent(student4, filename);
+
+        //remove a student from the system
+        System.out.println("Remove a student");
+        studentManagementSystem.removeStudent(student5,filename);
 
         // Display all students (this will read from the file and update the list in memory)
         System.out.println("Displaying all students:");
@@ -32,4 +49,5 @@ public class Main {
         // and update the search logic accordingly
 
     }
+
 }
