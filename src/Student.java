@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Student {
     private int studentId;
@@ -53,5 +54,17 @@ public class Student {
                 ", dateOfBirth=" + dateOfBirth +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId && Objects.equals(studentName, student.studentName) && Objects.equals(dateOfBirth, student.dateOfBirth) && Objects.equals(phoneNumber, student.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId, studentName, dateOfBirth, phoneNumber);
     }
 }
