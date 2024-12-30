@@ -64,12 +64,12 @@ public class Main {
 
         // Start Threads
         addThread.start();
-//        try {
-//            // Ensure adding completes before initial display
-//            addThread.join();
-//        } catch (InterruptedException e) {
-//            System.err.println("Add thread interrupted: " + e.getMessage());
-//        }
+        try {
+            // Ensure adding completes before initial display
+            addThread.join();
+        } catch (InterruptedException e) {
+            System.err.println("Add thread interrupted: " + e.getMessage());
+        }
 
         initialDisplayThread.start();
 //        try {
